@@ -4,8 +4,8 @@ class Product {
 	private String name;
 	private int price, qoh;
 
-	public Product(String n) {
-		name = n;
+	public Product(String name) {
+		this.name = name;
 	}
 
 	public Product(String n, int p) {
@@ -43,6 +43,7 @@ class Product {
 public class TestProduct {
 	public static void main(String[] args) {
 		var p1 = new Product("iPhone 17 Pro", 100000);
+		
 
 		p1.purchase(5);
 		System.out.println(p1.getValue());
