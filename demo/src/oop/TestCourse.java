@@ -3,6 +3,7 @@ package oop;
 class Course {
 	private String title;
 	private int duration, fee;
+	private static double gst = 12;
 
 	public Course(String title, int duration, int fee) {
 		this.title = title;

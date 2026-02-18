@@ -24,18 +24,26 @@ class SavingsAccount {
 	}
 
 	public void withdraw(double amount) {
-		this.balance -= amount;
+		if (amount <= this.balance - SavingsAccount.minBalance)
+		     this.balance -= amount;
+		else
+			System.out.println("Insufficient Balance!");
 	}
 
 	public double getBalance() {
 		return this.balance;
 	}
 
+	public static double getMinBalance() {
+		return SavingsAccount.minBalance;
+	}
 }
 
 public class TestAccount {
 
 	public static void main(String[] args) {
+		System.out.println(SavingsAccount.getMinBalance());
+		
 		var a1 = new SavingsAccount(1, "Bill");
 		var a2 = new SavingsAccount(2, "Scott", 10000);
 
@@ -44,7 +52,7 @@ public class TestAccount {
 
 		a2.withdraw(2000);
 		System.out.println(a2.getBalance());
-
+		
 	}
 
 }
