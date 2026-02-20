@@ -53,16 +53,19 @@ public class TestProduct {
 		Product prod; 
 		
 		prod = new Product("Something", 10000);
-		prod = new DiscountProduct("Other product", 20000, 10);  // Upcasting 
+		System.out.println(prod.getPrice());   // Runtime Polymorphism
 		
-		DiscountProduct disprod;
+		prod = new DiscountProduct("Other product", 20000, 10);  // Upcasting
+		System.out.println(prod.getPrice());   // Runtime Polymorphism
 		
-		if (prod instanceof DiscountProduct)
-			disprod = (DiscountProduct) prod;   // Downcasting
-
-		// Check and convert 
-		if (prod instanceof DiscountProduct dp2) {
-			
-		}
+//		DiscountProduct disprod;
+//		
+//		if (prod instanceof DiscountProduct)
+//			disprod = (DiscountProduct) prod;   // Downcasting
+//
+//		// Check and convert 
+//		if (prod instanceof DiscountProduct dp2) {
+//			
+//		}
 	}
 }
