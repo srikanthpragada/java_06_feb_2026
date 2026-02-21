@@ -11,14 +11,21 @@ abstract class Shape {
 		this.y = y;
 	}
 
+	final public int getX() {
+		return this.x;
+	}
+	
+	final public int getY() {
+		return this.y;
+	}
+	
 	public void print() {
 		System.out.println(this.x);
 		System.out.println(this.y);
 	}
 
 	public abstract double getArea();
- 
-	public abstract double getCircumference();
+ 	public abstract double getCircumference();
 	 
 }
 
