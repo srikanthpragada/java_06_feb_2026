@@ -17,8 +17,15 @@ class Person {
 
 	@Override
 	public boolean equals(Object obj) {
-		Person other = (Person) obj; // downcasting
-		return this.name.equals(other.name) && this.age == other.age;
+		if (obj instanceof Person other) {
+			return this.name.equals(other.name) && this.age == other.age;
+		} else
+			return false;
+	}
+	// When two objects are equal then their hashcodes must be same 
+	@Override
+	public int hashCode() {
+		return this.age;
 	}
 }
 
@@ -27,7 +34,11 @@ public class TestPerson {
 		var p1 = new Person("Martin", 30);
 		var p2 = new Person("Martin", 30);
 		System.out.println(p1.hashCode());
+		System.out.println(p2.hashCode());
+		
 		System.out.println(p1.toString());
 		System.out.println(p1.equals(p2));
+
+		System.out.println(p1.equals("Abc"));
 	}
 }
