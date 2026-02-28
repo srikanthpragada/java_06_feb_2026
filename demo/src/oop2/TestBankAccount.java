@@ -1,5 +1,7 @@
 package oop2;
 
+import java.security.InvalidParameterException;
+
 interface BankTransactions {
 	int minBalance = 10000;
 	
@@ -19,8 +21,11 @@ interface BankTransactions {
 class SavingsAccount implements BankTransactions {
 
 	@Override
-	public void deposit(double amount) {
-		// TODO Auto-generated method stub
+	public void deposit(double amount) throws InvalidParameterException{
+		 
+		if (amount <= 0)
+			throw new InvalidParameterException("Amount is invalid!");
+		
 		
 	}
 
