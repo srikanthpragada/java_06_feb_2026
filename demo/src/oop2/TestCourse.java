@@ -14,11 +14,12 @@ class Course implements Comparable<Course> {
 
 	@Override
 	public int compareTo(Course other) {
-		 return this.title.compareTo(other.title);
+		System.out.println("compareTo");
+		return this.title.compareTo(other.title);
 	}
-	
+
 	public String toString() {
-		return  this.title + "  - " + this.fee;
+		return this.title + "  - " + this.fee;
 	}
 
 }
@@ -26,14 +27,11 @@ class Course implements Comparable<Course> {
 public class TestCourse {
 
 	public static void main(String[] args) {
-		Course courses[] = { 
-				 new Course("Python", 10000), 
-				 new Course("Java", 7500), 
-				 new Course("Gen AI", 15000) };
+		Course courses[] = { new Course("Python", 10000), new Course("Java", 7500), new Course("Gen AI", 15000) };
 
 		Arrays.sort(courses);
-		
-		for(var c : courses) {
+
+		for (var c : courses) {
 			System.out.println(c);
 		}
 

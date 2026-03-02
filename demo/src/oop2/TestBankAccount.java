@@ -1,6 +1,15 @@
 package oop2;
 
-import java.security.InvalidParameterException;
+class InvalidAmountException extends Exception {
+	public InvalidAmountException(double amount) {
+		super(String.format("Transaction amount %lf is invalid!", amount));
+	}
+	
+//	@Override 
+//	public String getMessage() {
+//		return "";
+//	}
+}
 
 interface BankTransactions {
 	int minBalance = 10000;
@@ -9,8 +18,8 @@ interface BankTransactions {
 		return minBalance;
 	}
 	
-	void deposit(double amount);
-	void withdraw(double amount);
+	void deposit(double amount) throws InvalidAmountException;
+	void withdraw(double amount)throws InvalidAmountException;
 	double getBalance();
 	
 	default double getTransactionFee(double amount) {
@@ -21,18 +30,17 @@ interface BankTransactions {
 class SavingsAccount implements BankTransactions {
 
 	@Override
-	public void deposit(double amount) throws InvalidParameterException{
+	public void deposit(double amount) throws InvalidAmountException{
 		 
 		if (amount <= 0)
-			throw new InvalidParameterException("Amount is invalid!");
-		
+			throw new InvalidAmountException(amount);
 		
 	}
 
 	@Override
-	public void withdraw(double amount) {
-		// TODO Auto-generated method stub
-		
+	public void withdraw(double amount) throws InvalidAmountException {
+		if (amount <= 0)
+			throw new InvalidAmountException(amount);
 	}
 
 	@Override
