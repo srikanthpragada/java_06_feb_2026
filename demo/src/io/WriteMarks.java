@@ -8,7 +8,5 @@ public class WriteMarks {
 			for (int i = 1; i <= 50; i++)
 				rf.writeByte((int) (Math.random() * 100));
 		}
-
 	}
-
 }
