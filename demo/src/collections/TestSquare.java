@@ -1,8 +1,8 @@
 package collections;
 
-import java.util.HashSet;
+import java.util.TreeSet;
 
-class Square {
+class Square implements Comparable<Square>{
 	private int side;
 
 	public Square(int side) {
@@ -25,11 +25,16 @@ class Square {
 	public int hashCode() {
 		return this.side;
 	}
+
+	@Override
+	public int compareTo(Square other) {
+		return this.side - other.side;
+	}
 }
 
 public class TestSquare {
 	public static void main(String[] args) {
-		var squares = new HashSet<Square>();
+		var squares = new TreeSet<Square>();
 
 		squares.add(new Square(10));
 		squares.add(new Square(5));
