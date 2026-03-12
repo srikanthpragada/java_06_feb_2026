@@ -6,12 +6,10 @@ import java.sql.DriverManager;
 public class TestConnection {
 
 	public static void main(String[] args) {
-		String url = "jdbc:sqlite:c:/classroom/feb6/hr.db";
-
-		try (Connection con = DriverManager.getConnection(url)) {
+		try (Connection con = Database.getConnection()) {
 			System.out.println("Connected Successfully!");
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			System.out.println("Error :" + ex.getMessage());
 		}
 	}
 

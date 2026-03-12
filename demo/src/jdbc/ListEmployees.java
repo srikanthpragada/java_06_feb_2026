@@ -8,17 +8,18 @@ import javax.sql.rowset.RowSetProvider;
 public class ListEmployees {
 
 	public static void main(String[] args) {
-		String url = "jdbc:sqlite:c:/courses/java/hr.db";
 
-		try (Connection conn = DriverManager.getConnection(url)) {
+		try (Connection conn = Database.getConnection()) {
 			CachedRowSet rowSet = RowSetProvider.newFactory().createCachedRowSet();
-			rowSet.setCommand("select * from employees");
-			rowSet.execute(conn);
+			rowSet.setCommand("select emp_id, emp_name, emp_salary, emp_salary * 0.10 as bonus from employees");
+			rowSet.execute(conn); // link with connection and execute SQL
 			
 			while (rowSet.next()) {
 	            int id = rowSet.getInt("emp_id");
 	            String name = rowSet.getString("emp_name");
-	            System.out.printf("%2d  %-20s\n", id, name);
+	            int salary = rowSet.getInt("emp_salary");
+	            double bonus = rowSet.getDouble("bonus");
+	            System.out.printf("%2d  %-20s  %6d  %5.0f\n", id, name, salary, bonus);
 	        }
 
 		} catch (Exception e) {
