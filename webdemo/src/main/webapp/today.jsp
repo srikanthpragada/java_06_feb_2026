@@ -9,7 +9,6 @@
 <body>
 	<h1>
 		Today is :
-
 		<%
 	       out.println(java.time.LocalDate.now().toString());
 	    %>
