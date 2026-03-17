@@ -1,0 +1,21 @@
+
+body {
+	font-size:12pt;
+	font-family:verdana;
+}
+
+h1 {
+	color:Blue;
+}
+
+.banner {
+	background-color:red;
+	color:white;
+	font-bold :800;
+	font-size:28pt;
+}
+
+.menu {
+	background-color:gray;
+	font-bold:800;
+}

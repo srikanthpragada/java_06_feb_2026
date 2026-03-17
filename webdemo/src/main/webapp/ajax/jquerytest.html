@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQuery Test</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+   function wishUser() {
+	    alert("Hello " + $("#txtName").val())
+   }
+</script>
+</head>
+<body>
+	<h1>Wish</h1>
+	Enter your name :
+	<input type="text" id="txtName" />
+	<p></p>
+	<button onClick="wishUser()">Wish</button>
+
+</body>
+</html>
