@@ -6,6 +6,8 @@
  <div class="banner">Employee Manager</div>
  <div class="menu">
   <a href="home.jsp">Home</a>
+  &nbsp;
   <a href="add.jsp">Add</a>
+  &nbsp;
   <a href="list.jsp">List</a>
  </div>

@@ -1,0 +1,13 @@
+create table movies
+(
+  city varchar(30),
+  movie varchar(30)
+ )
+ 
+ 
+insert into movies values('vizag','RRR');
+insert into movies values('vizag','RS') ;
+insert into movies values('vizag','ET'); 
+insert into movies values('bangalore','RRR');
+insert into movies values('bangalore','Spiderman');
+insert into movies values('bangalore','Kashmir Files');

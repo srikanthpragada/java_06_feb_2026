@@ -9,13 +9,14 @@ h1 {
 }
 
 .banner {
-	background-color:red;
+	background-color:maroon;
 	color:white;
-	font-bold :800;
-	font-size:28pt;
+	font-weight :800;
+	font-size:24pt;
 }
 
 .menu {
-	background-color:gray;
-	font-bold:800;
+	background-color: #cccccc;
+	font-weight:800;
+	font-size:14pt;
 }
